@@ -40,7 +40,7 @@ def gold_data(database, table_name):
     spark.sql(query).describe().show()
     # Create a new table with the mean column
     new_table_name = f"{table_name}_with_mean"
-    spark.sql(f"CREATE TABLE {database}.{new_table_name} AS {query}")
+    spark.sql(f"CREATE TABLE IF NOT EXISTS {database}.{new_table_name} AS {query}")
     print(f"New table {database}.{new_table_name} created successfully.")
 
 
