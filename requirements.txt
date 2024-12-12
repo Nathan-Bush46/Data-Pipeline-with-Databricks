@@ -4,3 +4,12 @@ matplotlib==3.9.2
 pytest == 8.3.2
 pylint == 3.2.7 
 black == 24.8.0 
+
+#ds
+pandas
+
+#data
+python-dotenv
+databricks-sql-connector
+pyspark
+tabulate

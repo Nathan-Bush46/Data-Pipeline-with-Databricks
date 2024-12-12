@@ -1,6 +1,4 @@
 from pyspark.sql import SparkSession
-import pandas as pd 
-import re 
 
 
 def gold_data(database, table_name):
@@ -14,7 +12,7 @@ def gold_data(database, table_name):
     Returns:
         None
     """
-       # Initialize SparkSession
+    # Initialize SparkSession
     spark = SparkSession.builder.getOrCreate()
 
     # Check if the table exists
@@ -28,14 +26,14 @@ def gold_data(database, table_name):
     # Construct and execute the query to display the table data
     query = f"SELECT *, AVG(USD) OVER() AS mean_usd FROM `{database}`.`{table_name}`"
     print(f"Executing query: {query}")
-    
+
     # Display the data
-    display(spark.sql(query))
-    
+    # display(spark.sql(query))
+
     # Additional data insights
     print("\nTable Schema:")
     spark.sql(query).printSchema()
-    
+
     print("\nData Summary:")
     spark.sql(query).describe().show()
     # Create a new table with the mean column
@@ -47,7 +45,7 @@ def gold_data(database, table_name):
 if __name__ == "__main__":
     # Define database and table names
     database_name = "nathan_db"
-    table_name = "gold"
+    table_name1 = "gold"
 
     # Execute the load function
-    gold_data(database_name, table_name)
+    gold_data(database_name, table_name1)
