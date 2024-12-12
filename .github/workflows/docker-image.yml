@@ -37,7 +37,8 @@ jobs:
     - name: run formatting (black)
       run: |
         make format
-    - name: run main workflow
-      run: |
-        make run
+    # run goes here after set up
+    # - name: run main workflow
+    #   run: |
+    #     make run
     - run: echo "🍏 This job's status is ${{ job.status }}."
